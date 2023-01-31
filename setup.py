@@ -11,6 +11,7 @@ setup(
     long_description_content_type='text/markdown',
     author='Ahens | An Initiative to Initial',
     author_email="ahensinitiative@gmail.com",
+    url="https://github.com/SoumadeepChoudhury/infixpostfix",
     packages=find_packages(),
     entry_points={
             'console_scripts':['infix-postfix=infix_postfix.infix_postfix:main',
