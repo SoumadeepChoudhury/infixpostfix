@@ -1,6 +1,7 @@
 <div align="center">
+<p>
 <image src="./res/banner.jpg"/>
-<p>An application to convert infix to postfix and vice versa...</p>
+An application to convert infix to postfix and vice versa...</p>
 </div>
 
 # Key Features
