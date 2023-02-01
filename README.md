@@ -1,5 +1,5 @@
 <div align="center">
-<image src="https:///ahens.rf.gd/res/banner.jpg"/>
+<image src="./res/banner.jpg"/>
 <p>An application to convert infix to postfix and vice versa...</p>
 </div>
 
@@ -32,7 +32,9 @@ print($(variable))
 
 Example :- 
 
-<image src="https://ahens.rf.gd/res/example.jpg">
+
+
+<image src="./res/example.jpg" />
 
 # Contribution
 Anyone is free to contribute to this open source project. 🎉🎉
