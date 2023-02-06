@@ -18,6 +18,10 @@ class TestInfixPostFix(unittest.TestCase):
         self.assertEqual("AB+C*D/EF^+G/", postfix("((A+B)*C/D+E^F)/G"))
         self.assertEqual("ABCD+EF+*G/+*H*", postfix("A*(B+(C+D)*(E+F)/G)*H"))
         self.assertEqual("AB+S/E*", postfix("(A+B)/S*E"))
+        self.assertEqual("KL+MN*-OP^W*U/V/T*+QJA^^+",
+                         postfix("K+L-M*N+(O^P)*W/U/V*T+Q^J^A"))
+        self.assertEqual("ABC^^", postfix("A^B^C"))
+        self.assertEqual("XABC^^+", postfix("X+A^B^C"))
 
     def test_Postfix_to_Infix(self):
         self.assertEqual("((A+B)*C)/D", infix("AB+C*D/"))

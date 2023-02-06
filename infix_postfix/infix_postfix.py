@@ -35,7 +35,7 @@ def isHigherPrecedence(val1: str, val2: str) -> bool:
         if val2 in PRECEDENCE[i]:
             val2_index = i
     if val1_index != None and val2_index != None:
-        if val1_index > val2_index:
+        if val1_index > val2_index or (val1_index == 0 and val2_index == 0):
             return False
         else:
             return True
