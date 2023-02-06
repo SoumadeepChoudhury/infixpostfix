@@ -10,7 +10,7 @@ README = (HERE / "README.md").read_text()
 # This call to setup() does all the work
 setup(
     name="infix-postfix",
-    version="1.0.2",
+    version="1.1.0",
     description="Converts Infix to Postfix and vice versa...",
     long_description=README,
     long_description_content_type="text/markdown",
@@ -55,7 +55,7 @@ setup(
         'infix_postfix'
     ],
     entry_points={
-            'console_scripts':['infix-postfix=infix_postfix.infix_postfix:main',
-                               ],
-        },
+        'console_scripts': ['infix-postfix=infix_postfix.infix_postfix:main',
+                            ],
+    },
 )
