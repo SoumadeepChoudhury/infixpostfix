@@ -1,6 +1,6 @@
 <div align="center">
 <p>
-<image src="./res/banner.jpg"/>
+<image src="./res/banner.jpg"/><br>
 An application to convert infix to postfix and vice versa...</p>
 </div>
 
@@ -21,8 +21,9 @@ An application to convert infix to postfix and vice versa...</p>
 
 
 # Usage
-- To convert infix to postfix, run `infix-postfix --infix ${infix_expression}`
-- To convert postfix to infix, run `infix-postfix --postfix ${postfix_expression}`
+- To convert infix to postfix, run `infix-postfix --infix "${infix_expression}"`
+- To convert postfix to infix, run `infix-postfix --postfix "${postfix_expression}"`
+> NOTE : Double quotes ("") is must for writing the expression to get correct output..
 - To run this application in your own application or python script, run
  
 ```python
