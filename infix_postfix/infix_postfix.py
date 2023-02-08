@@ -1,23 +1,28 @@
 
 class Stack:
+    '''Class defining basic stack functions.'''
     def __init__(self) -> None:
         self.STACK = list()
 
     def isEmpty(self) -> bool:
+        '''Checks for empty stack'''
         if self.STACK == []:
             return True
         return False
 
     def push(self, item: str) -> None:
+        '''Push element in stack'''
         self.STACK.append(item)
 
     def pop(self) -> str:
+        '''Removes top element from stack'''
         if self.isEmpty():
             return "Underflow"
         item: str = self.STACK.pop()
         return item
 
     def peek(self) -> str:
+        '''Displays the topmost element of the stack'''
         if self.isEmpty():
             return "Underflow"
         else:
@@ -25,7 +30,7 @@ class Stack:
 
 
 def isHigherPrecedence(val1: str, val2: str) -> bool:
-    """Returns True if 1st value have higher precedence than 2nd value."""
+    """Checks for precedence. Returns True if 1st value have higher precedence than 2nd value."""
     PRECEDENCE: list = ["^", "*/", "+-"]
     val1_index: int = None
     val2_index: int = None
@@ -44,6 +49,7 @@ def isHigherPrecedence(val1: str, val2: str) -> bool:
 
 
 def postfix(infix: str) -> str:
+    '''Converts infix to postfix expression'''
     STACK: object = Stack()
     if infix[0] != "(" or infix[-1] != ")":
         infix = "("+infix+")"
@@ -69,6 +75,7 @@ def postfix(infix: str) -> str:
 
 
 def infix(postfix: str) -> str:
+    '''Converts postfix to infix expression'''
     STACK: object = Stack()
     for i in postfix:
         if i not in "+-*/^":
@@ -82,6 +89,7 @@ def infix(postfix: str) -> str:
 
 
 def main():
+    '''Startup point of application'''
     import sys
     if sys.argv[1] == "--infix":
         print(postfix(sys.argv[2]))
