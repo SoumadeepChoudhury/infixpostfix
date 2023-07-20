@@ -1,6 +1,7 @@
 
 class Stack:
     '''Class defining basic stack functions.'''
+
     def __init__(self) -> None:
         self.STACK = list()
 
@@ -56,30 +57,40 @@ def postfix(infix: str) -> str:
     postfix: str = ""
     for i in infix:
         if i in "(+-*/^":
+            if postfix != "":
+                postfix += (" " if postfix[-1] != " " else "")
             while isHigherPrecedence(STACK.peek(), i):
                 item: str = STACK.pop()
                 if item not in ("Underflow", "(", ")"):
-                    postfix += item
+                    postfix += item+" "
             STACK.push(i)
         elif i == ")":
+            if postfix != "":
+                postfix += (" " if postfix[-1] != " " else "")
             while STACK.peek() != "(":
                 item: str = STACK.pop()
                 if item not in ("Underflow", "(", ")"):
-                    postfix += item
+                    postfix += item+" "
             item: str = STACK.pop()
             if item not in ("Underflow", "(", ")"):
-                postfix += item
-        else:
+                postfix += item+" "
+        elif (i != ' '):
             postfix += i
-    return postfix
+    return postfix.strip()
 
 
 def infix(postfix: str) -> str:
     '''Converts postfix to infix expression'''
     STACK: object = Stack()
+    value = ""
     for i in postfix:
         if i not in "+-*/^":
-            STACK.push(i)
+            if (i == " "):
+                if value != "":
+                    STACK.push(value)
+                value = ""
+            else:
+                value += i
         else:
             after: str = STACK.pop()
             before: str = STACK.pop()
